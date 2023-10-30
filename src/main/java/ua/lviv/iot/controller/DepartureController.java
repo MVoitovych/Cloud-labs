@@ -30,6 +30,11 @@ public class DepartureController {
     @Autowired
     private DepartureService departureService;
 
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+
     @GetMapping(value = "/{departureId}")
     public ResponseEntity<DepartureDto> getDeparture(@PathVariable Integer departureId) {
         Departure departure = departureService.findById(departureId);
